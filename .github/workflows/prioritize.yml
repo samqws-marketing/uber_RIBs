@@ -71,15 +71,17 @@ jobs:
           cat multimodule.txt
           java -jar xModuleAnalyzer.jar -xModulePath multimodule.txt -fsaJarPath ./wss-unified-agent.jar -c ./eua.config -aggregateModules true -viaDebug true
           pwd 
+          echo "pwd"
           ls ./whitesource
-          echo "ls of ${{github.workspace}}/whitesource"
-          ls ${{github.workspace}}/whitesource
+          echo "ls of ./whitesource"
+          echo "ls of ${{github.workspace}}/android/whitesource"
+          ls ${{github.workspace}}/android/whitesource
       - name: 'Upload Prioritize Logs'
         uses: actions/upload-artifact@v2
         with:
           name: Prioritize-Logs
           path: |
-            ${{github.workspace}}/whitesource
+            ${{github.workspace}}/android/whitesource
             /tmp/whitesource*
             /tmp/ws-ua*
           retention-days: 1
