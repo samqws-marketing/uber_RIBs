@@ -20,6 +20,14 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
       - name: Install Android SDK
         uses: malinskiy/action-android/install-sdk@release/0.1.1
       - name: Gradle Wrapper Validation
@@ -62,6 +70,10 @@ jobs:
           echo 'multimodule.txt contents'
           cat multimodule.txt
           java -jar xModuleAnalyzer.jar -xModulePath multimodule.txt -fsaJarPath ./wss-unified-agent.jar -c ./eua.config -aggregateModules true -viaDebug true
+          pwd 
+          ls ./whitesource
+          echo "ls of ${{github.workspace}}/whitesource"
+          ls ${{github.workspace}}/whitesource
       - name: 'Upload Prioritize Logs'
         uses: actions/upload-artifact@v2
         with:
