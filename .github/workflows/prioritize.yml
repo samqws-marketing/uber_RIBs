@@ -67,6 +67,7 @@ jobs:
         with:
           name: Prioritize-Logs
           path: |
+            ./whitesource
             /tmp/whitesource*
             /tmp/ws-ua*
           retention-days: 1
