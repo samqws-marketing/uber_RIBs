@@ -96,7 +96,7 @@ def androidx = [
 ]
 
 def test = [
-    junit: "junit:junit:4.12",
+    junit: "junit:junit:4.13.1",
     mockito: "org.mockito:mockito-core:2.27.0",
     mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0",
     compileTesting: "com.google.testing.compile:compile-testing:0.17",
