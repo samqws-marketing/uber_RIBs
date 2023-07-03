@@ -23,7 +23,7 @@ def versions = [
     ],
     autodispose: '1.4.0',
     coroutines: '1.4.3',
-    dagger: "2.34",
+    dagger: "2.43",
     errorProne: '2.3.3',
     gjf: '1.7',
     intellij: "2019.2",
